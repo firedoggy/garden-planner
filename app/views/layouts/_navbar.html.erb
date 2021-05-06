@@ -1,13 +1,13 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-brand">
-        <%= link_to "Home", '/' %>
-        <%= link_to "Plants", plants_path %>
-        <%= link_to "Gardens", '/' %>
-        <% if logged_in?%>
-            <%= link_to "Profile", '/' %>
-        <% else %>
-            <%=link_to "Sign Up", signup_path %> |
-            <%=link_to "Log In", login_path %>
-        <% end %>
-    </div>
-</nav> 
+<div class="navbar">
+    <li id="search_partial"> <%= render '/search_plants'%>
+    <%= link_to "Home", '/' %>
+    <%= link_to "Plants", plants_path %>
+    <%= link_to "Gardens", '/' %>
+    <% if logged_in?%>
+        <%= link_to "Profile", '/' %>
+        <%= link_to "Log out", logout_path, method: "delete" %>
+    <% else %>
+        <%=link_to "Sign Up", signup_path %> |
+        <%=link_to "Log In", login_path %>
+    <% end %>
+</div>

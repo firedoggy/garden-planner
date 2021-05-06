@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     root 'sessions#home'
-    
+
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'
 
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     post '/logout' => 'sessions#destroy'
 
+    post 'plants/search' => 'plants#search', as: 'plants_search'
+    
     resources :gardens
     resources :plants
     resources :users

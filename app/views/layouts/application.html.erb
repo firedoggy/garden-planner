@@ -10,11 +10,33 @@
         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
-    <div class="container">
-        <%= render "layouts/navbar" %>
-    </div>
-
     <body>
+        <div class="border"></div>
+
+        <div class="header">
+            <h1>Garden Builder</h1>
+            <p></p>
+        </div>
+
+        <div class="container">
+            <%= render "layouts/navbar" %>
+        </div>
+
+        <div>
+            <% if flash[:message] %>
+                <%= flash[:message]%>
+            <% end %>
+            <%= @error%>
+        </div>
+
         <%= yield %>
+
+        <div class="content">
+
+        </div>
+
+        <div class="footer">
+            <h2>Garden Builder 2021</h2>
+        </div>
     </body>
 </html>

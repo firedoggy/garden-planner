@@ -1,5 +1,13 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="navbar-brand">
-    Programmers We L<span class="glyphicon glyphicon-heart"></span>ve
-  </div>
+    <div class="navbar-brand">
+        <%= link_to "Home", '/' %>
+        <%= link_to "Plants", plants_path %>
+        <%= link_to "Gardens", '/' %>
+        <% if logged_in?%>
+            <%= link_to "Profile", '/' %>
+        <% else %>
+            <%=link_to "Sign Up", signup_path %> |
+            <%=link_to "Log In", login_path %>
+        <% end %>
+    </div>
 </nav> 
